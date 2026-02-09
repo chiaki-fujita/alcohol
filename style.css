@@ -1,0 +1,282 @@
+
+/*----------------
+CSS
+作成日：1月17日
+作成者：辻中千晶
+サイト名：alcohol
+----------------*/
+
+
+html {
+ font-size: 100%;
+}
+a {
+color: #121212; 
+text-decoration: none;
+/*aタグの装飾を削除する*/
+}
+img {
+max-width: 100%;
+/*画像を親要素以上にしない*/
+vertical-align: bottom;
+/*画像の下に余白を作らない*/
+}
+li {
+list-style: none;
+/*liタグの装飾を削除する*/
+}
+
+body{
+ font-family: Hiragino Kaku Gothic ProN ;   
+ color: #121212;  
+ font-size: 0.9rem;
+}
+
+.wrapper{
+ padding: 0 6%;   
+ margin: 0 auto;
+ max-width: 1208px;
+}
+
+.sec-title{
+font-size: 2.25rem;
+text-align: center;
+margin-bottom: 50px;
+}
+
+
+/*==================================================
+    header
+===================================*/
+#header{
+top: 0;
+left: 0;
+width: 100%;
+padding: 20px 40px;  
+/* 高さ120pxの固定ヘッダー */
+height: 120px;
+position: fixed;
+z-index: 10;
+background-color: #fff;
+}
+
+#header h1{
+ width: 100px;   
+}
+
+#header .flex{
+ display: flex;
+ justify-content: space-between; 
+ align-items: center;
+}
+
+
+
+/*==================================================
+    mainvisual
+===================================*/
+
+#mainvisual{
+height:calc(100vh - 120px);  
+/* header に隠れないようにする 
+ margin-top だけだと 下にはみ出す（画面より大きくなる）
+ height だけだとheader に隠れるため 両方必要 */
+margin-top: 120px;      
+overflow: hidden;      
+}
+
+#mainvisual img {
+width: 100%;            
+height: 100%;            
+object-fit: cover;       
+}
+
+
+
+/*==================================================
+section          Types of alcohol
+===================================*/
+
+
+#pickup{
+ padding: 60px 0;   
+}
+
+#pickup .pickup-img{
+ display: flex;   
+ width: 100%;
+}
+
+#pickup .pickup-img img{
+padding: 0 30px;
+object-fit: cover;
+height: 200px;
+/*下の余白（ベースラインとの隙間）がなくなる
+width:100% と height:200px などのサイズ指定が正確に反映される */
+display: block;
+/* inline要素... 下に謎の隙間ができることがある*/
+}
+
+.slider {
+  line-height: 0;
+}
+
+
+/*==================================================
+section         Moderate alcohol consumption 
+===================================*/
+
+#feature{
+ padding-bottom: 60px;   
+}
+
+#feature .feature-text{
+ font-size: 14.4px;  
+ font-weight: bold; 
+ padding: 20px 0;
+}
+
+#feature .feature-text-title , #feature .feature-date{
+ font-size: 0.75rem;   
+}
+
+#feature .feature-date{
+ text-align: right;   
+}
+
+#feature .grid-box{
+ display: grid;   
+ grid-template-columns: repeat(3, 1fr); 
+  grid-gap: 27px;               
+}
+
+.feature-content{
+  background-color: #FFF;        /* タイルの背景色 */
+  box-shadow:  0 0 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;  
+}
+
+
+.feature-content img {
+  height: 200px;
+  width: 100%;                    
+  display: block;                  /* 画像の余白を消す */
+  object-fit: cover;               
+}
+
+#feature .feature-textbox{
+ padding: 13px;   
+}
+
+
+/*==================================================
+section       contact
+===================================*/
+
+
+#contact{
+ background-color: #6E026F;   
+ color: #FFF;
+ padding: 50px 40px;
+}
+
+#contact .contact-box{
+ display: flex;   
+ padding: 0 7px;
+}
+
+#contact .contact-text{
+padding-right: 70px;
+width: 50%;
+font-size:0.8rem;
+}
+
+#contact .contact-text p{
+padding-bottom: 30px;
+}
+
+#contact form{
+ display: flex;   
+ flex-direction: column;
+ width: 50%;
+ padding-left: 50px;
+}
+
+#contact input , #contact textarea{
+ color:#6E026F;   
+ background-color: #FFF;
+ border: 1px solid #FFF;
+ width: 100%;
+ margin-bottom: 20px;
+ padding:8px;
+}
+
+#contact textarea{
+padding: 6px;
+}
+
+#contact input[type="submit"] {
+  background-color: #6E026F;   /* ボタンの背景色 */
+  color: #FFF;                 /* 文字色 */
+  border: 1px solid #FFF ;              /* 枠線を消す */
+  padding: 12px 5px;          /* 高さと左右の余白 */
+  font-size: 0.9rem;            
+  cursor: pointer;             
+  transition: 0.3s; 
+  display: inline-block;  
+  width: 170px;         /* ホバー時のアニメーション */
+}
+
+/* ホバーしたとき */
+#contact input[type="submit"]:hover {
+  background-color: #FFC400;   /* 少し濃い色に変化 */
+}
+
+
+
+/*==================================================
+             footer
+===================================*/
+
+
+#footer{
+ background-color: #6E026F;   
+}
+
+#footer p{
+font-size: 0.75rem;
+color: #FFF;
+text-align: center;
+}
+
+
+@media screen and (max-width: 767px) {
+  
+  #feature .grid-box{
+   display: flex;
+   flex-direction: column;
+ }
+
+ #contact .contact-box{
+display: flex;
+flex-direction: column;
+
+ }
+
+ #contact form{
+ width: 100%; 
+ padding-left: 0;
+ }
+
+ #contact .contact-text{
+ width: 100%; 
+ padding-right: 0;
+ }
+
+ #contact input[type="submit"] {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+
+}
